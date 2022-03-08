@@ -27,7 +27,11 @@ function handleGuess(id) {
         wins++;
     }
     // update display image
+    const displayBall = document.getElementById(`cup-${randomizeBall}`);
+
+    displayBall.src = 'assets/ball-cup.png';
     // update win/loss/total
+
 }
 // set event listeners 
   // event for each button, call handler function 
