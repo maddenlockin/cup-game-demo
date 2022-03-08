@@ -37,4 +37,13 @@ function handleGuess(id) {
 }
 // set event listeners 
   // event for each button, call handler function 
+button0.addEventListener('click', () => {
+    handleGuess(0);
+});
+button1.addEventListener('click', () => {
+    handleGuess(1);
+});
+button2.addEventListener('click', () => {
+    handleGuess(2);
+});
 
