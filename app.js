@@ -12,12 +12,17 @@ const button2 = document.getElementById('button-2');
 let wins = 0;
 let total = 0;
 
+disImage0.src = 'assets/cup.png';
+disImage1.src = 'assets/cup.png';
+disImage2.src = 'assets/cup.png';
+
 // create handler function for user guess
 function handleGuess(id) {
     // set display image src
     disImage0.src = 'assets/cup.png';
     disImage1.src = 'assets/cup.png';
     disImage2.src = 'assets/cup.png';
+
     // increment total
     total++;
     // randomize app cup choice & compare
@@ -31,9 +36,9 @@ function handleGuess(id) {
 
     displayBall.src = 'assets/ball-cup.png';
     // update win/loss/total
-    winsEl.textContent = wins;
-    totalEl.textContent = total;
-    lossesEl.textContent = total - wins;
+    winsEl.textContent = 'Wins:' + wins;
+    totalEl.textContent = 'Total:' + total;
+    lossesEl.textContent = 'Losses:' + total - wins;
 }
 // set event listeners 
   // event for each button, call handler function 

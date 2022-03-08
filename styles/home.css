@@ -1,1 +1,6 @@
 /* add home page styles here */
+
+img {
+  max-width: 200px;
+}
+
