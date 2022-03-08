@@ -36,9 +36,9 @@ function handleGuess(id) {
 
     displayBall.src = 'assets/ball-cup.png';
     // update win/loss/total
-    winsEl.textContent = 'Wins:' + wins;
-    totalEl.textContent = 'Total:' + total;
-    lossesEl.textContent = 'Losses:' + total - wins;
+    winsEl.textContent = 'Wins: ' + wins;
+    totalEl.textContent = 'Total: ' + total;
+    lossesEl.textContent = 'Losses: ' + (total - wins);
 }
 // set event listeners 
   // event for each button, call handler function 
