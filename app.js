@@ -12,16 +12,17 @@ const button2 = document.getElementById('button-2');
 let wins = 0;
 let total = 0;
 
-disImage0.src = 'assets/cup.png';
-disImage1.src = 'assets/cup.png';
-disImage2.src = 'assets/cup.png';
+function resetImages() {
+    disImage0.src = 'assets/cup.png';
+    disImage1.src = 'assets/cup.png';
+    disImage2.src = 'assets/cup.png';
+}
+resetImages();
 
 // create handler function for user guess
 function handleGuess(id) {
     // set display image src
-    disImage0.src = 'assets/cup.png';
-    disImage1.src = 'assets/cup.png';
-    disImage2.src = 'assets/cup.png';
+    resetImages();
 
     // increment total
     total++;
