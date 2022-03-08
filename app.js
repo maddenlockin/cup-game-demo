@@ -11,7 +11,14 @@ const button2 = document.getElementById('button-2');
 // let state
 let wins = 0;
 let total = 0;
+
+// create handler function for user guess
+  // set display image src
+  // increment total 
+  // randomize app cup choice & compare
+  // update display image 
+  // update win/loss/total
+
 // set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+  // event for each button, call handler function 
+
