@@ -13,12 +13,22 @@ let wins = 0;
 let total = 0;
 
 // create handler function for user guess
-  // set display image src
-  // increment total 
-  // randomize app cup choice & compare
-  // update display image 
-  // update win/loss/total
+function handleGuess(id) {
+    // set display image src
+    disImage0.src = 'assets/cup.png';
+    disImage1.src = 'assets/cup.png';
+    disImage2.src = 'assets/cup.png';
+    // increment total
+    total++;
+    // randomize app cup choice & compare
+    const randomizeBall = Math.floor(Math.random() * 3);
 
+    if (randomizeBall === id) {
+        wins++;
+    }
+    // update display image
+    // update win/loss/total
+}
 // set event listeners 
   // event for each button, call handler function 
 
