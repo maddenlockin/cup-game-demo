@@ -9,7 +9,8 @@ const button0 = document.getElementById('button-0');
 const button1 = document.getElementById('button-1');
 const button2 = document.getElementById('button-2');
 // let state
-
+let wins = 0;
+let total = 0;
 // set event listeners 
   // get user input
   // use user input to update state 
