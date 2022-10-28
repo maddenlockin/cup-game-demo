@@ -23,3 +23,30 @@ Additional considerations:
   - What needs to live in a persistence layer?
 - Is there some state we need to initialize?
 - Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+
+## HTML Setup
+- 3 image tags
+ - Why? to show the user the correct cup
+ - How? `cupImg.src = 'assets/cup-with-ball.png`
+- 3 "destination" elements 
+ - Why? To show the user the wins, losses, and total state as they change
+ - How? `winsEl.textContent = winCount`
+- 3 buttons
+  - Why? To let the user make a guess
+  - How? `button.addEventListener('click', () => {})`
+
+## State
+wins = 0
+total = 0
+<!-- DERIVED STATE: losses = total - wins -->
+
+## Events -- this is the hard part
+- User clicks one of the buttons
+  - (address the "every cup has a ball" problem)
+  - increment total
+  - did the user guess the correct cup?
+    - the app needs to decide which one is correct
+    - if so, increment the wins
+  - update the DOM to show two things:
+    - the correct cup image element should update
+    - the wins, losses, and total elements show update
