@@ -1,8 +1,8 @@
 // grab DOM elements for shell functionality
 
-const pearl1 = document.getElementById('pearl-1');
-const pearl2 = document.getElementById('pearl-2');
-const pearl3 = document.getElementById('pearl-3');
+const shell1 = document.getElementById('shell-1');
+const shell2 = document.getElementById('shell-2');
+const shell3 = document.getElementById('shell-3');
 const button1 = document.getElementById('button-1');
 const totalEl = document.getElementById('total');
 const winsEl = document.getElementById('wins');
@@ -24,11 +24,11 @@ button1.addEventListener('click', () => {
     if (pearlLocation === 1) {
         wins++;
         // if its the location add classList of 'reveal' to pearl div
-        pearl1.classList.add('reveal');
+        shell1.classList.add('reveal');
     } else if (pearlLocation === 2) {
-        pearl2.classList.add('reveal');
+        shell2.classList.add('reveal');
     } else {
-        pearl3.classList.add('reveal');
+        shell3.classList.add('reveal');
     }
     displayResults();
 });
@@ -40,7 +40,7 @@ function displayResults() {
 }
 
 function resetPearls() {
-    pearl1.classList.remove('reveal');
-    pearl2.classList.remove('reveal');
-    pearl3.classList.remove('reveal');
+    shell1.classList.remove('reveal');
+    shell2.classList.remove('reveal');
+    shell3.classList.remove('reveal');
 }
