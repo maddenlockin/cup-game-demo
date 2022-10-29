@@ -1,55 +1,46 @@
-// import functions and grab DOM elements
-const disImage0 = document.getElementById('cup-0');
-const disImage1 = document.getElementById('cup-1');
-const disImage2 = document.getElementById('cup-2');
+// grab DOM elements for shell functionality
+
+const pearl1 = document.getElementById('pearl-1');
+const pearl2 = document.getElementById('pearl-2');
+const pearl3 = document.getElementById('pearl-3');
+const button1 = document.getElementById('button-1');
+const totalEl = document.getElementById('total');
 const winsEl = document.getElementById('wins');
 const lossesEl = document.getElementById('losses');
-const totalEl = document.getElementById('total');
-const button0 = document.getElementById('button-0');
-const button1 = document.getElementById('button-1');
-const button2 = document.getElementById('button-2');
-// let state
+
+//state
 let wins = 0;
 let total = 0;
 
-function resetImages() {
-    disImage0.src = 'assets/cup.png';
-    disImage1.src = 'assets/cup.png';
-    disImage2.src = 'assets/cup.png';
-}
-resetImages();
-
-// create handler function for user guess
-function handleGuess(id) {
-    // set display image src
-    resetImages();
-
-    // increment total
-    total++;
-    // randomize app cup choice & compare
-    const randomizeBall = Math.floor(Math.random() * 3);
-
-    if (randomizeBall === id) {
-        wins++;
-    }
-    // update display image
-    const displayBall = document.getElementById(`cup-${randomizeBall}`);
-
-    displayBall.src = 'assets/ball-cup.png';
-    // update win/loss/total
-    winsEl.textContent = 'Wins: ' + wins;
-    totalEl.textContent = 'Total: ' + total;
-    lossesEl.textContent = 'Losses: ' + (total - wins);
-}
-// set event listeners 
-  // event for each button, call handler function 
-button0.addEventListener('click', () => {
-    handleGuess(0);
-});
+// add an eventListener to our button
 button1.addEventListener('click', () => {
-    handleGuess(1);
-});
-button2.addEventListener('click', () => {
-    handleGuess(2);
+    // increment total every time
+    total++;
+    //reset
+    resetPearls();
+    // on click, randomize pearl location
+    const pearlLocation = Math.ceil(Math.random() * 3);
+    // check pearl location
+    if (pearlLocation === 1) {
+        wins++;
+        // if its the location add classList of 'reveal' to pearl div
+        pearl1.classList.add('reveal');
+    } else if (pearlLocation === 2) {
+        pearl2.classList.add('reveal');
+    } else {
+        pearl3.classList.add('reveal');
+    }
+    displayResults();
 });
 
+function displayResults() {
+    winsEl.textContent = wins;
+    totalEl.textContent = total;
+    lossesEl.textContent = total - wins;
+}
+
+function resetPearls() {
+    pearl1.classList.remove('reveal');
+    pearl2.classList.remove('reveal');
+    pearl3.classList.remove('reveal');
+}
