@@ -1,24 +1,28 @@
-// import functions and grab DOM elements
-const disImage0 = document.getElementById('cup-0');
-const disImage1 = document.getElementById('cup-1');
-const disImage2 = document.getElementById('cup-2');
-const winsEl = document.getElementById('wins');
-const lossesEl = document.getElementById('losses');
-const totalEl = document.getElementById('total');
-const button0 = document.getElementById('button-0');
+// import functions and grab DOM element
 const button1 = document.getElementById('button-1');
-const button2 = document.getElementById('button-2');
+const shell1 = document.querySelector('#img-1');
+const shell2 = document.querySelector('#img-2');
+const shell3 = document.querySelector('#img-3');
+
 // let state
-let wins = 0;
-let total = 0;
 
-// create handler function for user guess
-  // set display image src
-  // increment total 
-  // randomize app cup choice & compare
-  // update display image 
-  // update win/loss/total
+button1.addEventListener('click', () => {
+    resetShells();
+    //generate a random number between 1 and 3
+    const pearlLocation = Math.ceil(Math.random() * 3);
+    // compare number and shell (if...else)
+    //add class of reveal to matching shell
+    if (pearlLocation === 1) {
+        shell1.classList.add('reveal');
+    } else if (pearlLocation === 2) {
+        shell2.classList.add('reveal');
+    } else {
+        shell3.classList.add('reveal');
+    }
+});
 
-// set event listeners 
-  // event for each button, call handler function 
-
+function resetShells() {
+    shell1.classList.remove('reveal');
+    shell2.classList.remove('reveal');
+    shell3.classList.remove('reveal');
+}
