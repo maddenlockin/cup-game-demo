@@ -95,6 +95,7 @@ button {
     align-items: center;
     justify-content: flex-end;
     position: relative;
+    gap: 20px;
 }
 
 .shell.reveal img {
@@ -116,5 +117,5 @@ button {
     border-radius: 50%;
     box-shadow: 5px -2px 5px rgba(0, 0, 0, 0.6);
     margin: 10px;
-    top: 120px;
+    top: 70px;
 }
