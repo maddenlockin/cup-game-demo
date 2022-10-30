@@ -28,9 +28,11 @@ body {
 
     font-family: 'Titillium Web', sans-serif;
     background-color: rgb(251, 180, 191);
+
 }
 
 main {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,4 +123,12 @@ button {
     box-shadow: 5px -2px 5px rgba(0, 0, 0, 0.6);
     margin: 10px;
     top: 70px;
+}
+
+.stat {
+    padding-right: 5rem;
+}
+
+button {
+    margin-right: 2rem;
 }
