@@ -27,7 +27,7 @@ body {
     --footer-height: 25px;
 
     font-family: 'Titillium Web', sans-serif;
-    background-color: rgb(252, 212, 218);
+    background-color: rgb(251, 180, 191);
 }
 
 main {
@@ -97,10 +97,13 @@ button {
     position: relative;
     gap: 20px;
 }
-
-.shell.reveal img {
-    transform: translateY(-60px);
+.reveal {
+    transform: translateY(-100px);
 }
+/* 
+.shell.reveal img {
+    transform: translateY(-100px);
+} */
 
 .shell img {
     width: 100%;
