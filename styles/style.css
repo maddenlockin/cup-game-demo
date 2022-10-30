@@ -28,11 +28,9 @@ body {
 
     font-family: 'Titillium Web', sans-serif;
     background-color: rgb(251, 180, 191);
-
 }
 
 main {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,9 +116,9 @@ button {
     position: absolute;
     height: 40px;
     width: 40px;
-    background-color: beige;
+    background-color: rgb(245, 233, 220);
     border-radius: 50%;
-    box-shadow: 5px -2px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px -2px 5px rgba(113, 112, 112, 0.6);
     margin: 10px;
     top: 70px;
 }
