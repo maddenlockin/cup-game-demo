@@ -1,54 +1,80 @@
 // import functions and grab DOM elements
-const disImage0 = document.getElementById('cup-0');
-const disImage1 = document.getElementById('cup-1');
-const disImage2 = document.getElementById('cup-2');
+const img1 = document.getElementById('img-1');
+const img2 = document.querySelector('#img-2');
+const img3 = document.querySelector('#img-3');
+
+const button1 = document.getElementById('button-1');
+const button2 = document.getElementById('button-2');
+const button3 = document.getElementById('button-3');
+
 const winsEl = document.getElementById('wins');
 const lossesEl = document.getElementById('losses');
 const totalEl = document.getElementById('total');
-const button0 = document.getElementById('button-0');
-const button1 = document.getElementById('button-1');
-const button2 = document.getElementById('button-2');
+
 // let state
 let wins = 0;
 let total = 0;
 
-disImage0.src = 'assets/cup.png';
-disImage1.src = 'assets/cup.png';
-disImage2.src = 'assets/cup.png';
-
-// create handler function for user guess
-function handleGuess(id) {
-    // set display image src
-    disImage0.src = 'assets/cup.png';
-    disImage1.src = 'assets/cup.png';
-    disImage2.src = 'assets/cup.png';
-
-    // increment total
-    total++;
-    // randomize app cup choice & compare
-    const randomizeBall = Math.floor(Math.random() * 3);
-
-    if (randomizeBall === id) {
-        wins++;
-    }
-    // update display image
-    const displayBall = document.getElementById(`cup-${randomizeBall}`);
-
-    displayBall.src = 'assets/ball-cup.png';
-    // update win/loss/total
-    winsEl.textContent = 'Wins: ' + wins;
-    totalEl.textContent = 'Total: ' + total;
-    lossesEl.textContent = 'Losses: ' + (total - wins);
-}
-// set event listeners 
-  // event for each button, call handler function 
-button0.addEventListener('click', () => {
-    handleGuess(0);
-});
+//button click event listener
 button1.addEventListener('click', () => {
-    handleGuess(1);
-});
-button2.addEventListener('click', () => {
-    handleGuess(2);
+    total++;
+    resetShells();
+    //generate random location (number between 1 and 3)
+    const pearlLocation = Math.ceil(Math.random() * 3);
+    //take that location and add the reveal class to it (if.. else)
+    if (pearlLocation === 1) {
+        wins++;
+        img1.classList.add('reveal');
+    } else if (pearlLocation === 2) {
+        img2.classList.add('reveal');
+    } else {
+        img3.classList.add('reveal');
+    }
+    displayResults();
 });
 
+button2.addEventListener('click', () => {
+    total++;
+    resetShells();
+    //generate random location (number between 1 and 3)
+    const pearlLocation = Math.ceil(Math.random() * 3);
+    //take that location and add the reveal class to it (if.. else)
+    if (pearlLocation === 1) {
+        wins++;
+        img1.classList.add('reveal');
+    } else if (pearlLocation === 2) {
+        img2.classList.add('reveal');
+    } else {
+        img3.classList.add('reveal');
+    }
+    displayResults();
+});
+
+button3.addEventListener('click', () => {
+    total++;
+    resetShells();
+    //generate random location (number between 1 and 3)
+    const pearlLocation = Math.ceil(Math.random() * 3);
+    //take that location and add the reveal class to it (if.. else)
+    if (pearlLocation === 1) {
+        wins++;
+        img1.classList.add('reveal');
+    } else if (pearlLocation === 2) {
+        img2.classList.add('reveal');
+    } else {
+        img3.classList.add('reveal');
+    }
+    displayResults();
+});
+
+function displayResults() {
+    winsEl.textContent = wins;
+    lossesEl.textContent = total - wins;
+    totalEl.textContent = total;
+}
+
+function resetShells() {
+    img1.classList.remove('reveal');
+    img2.classList.remove('reveal');
+    img3.classList.remove('reveal');
+}

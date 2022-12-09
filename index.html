@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap"
+            rel="stylesheet"
+        />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/home.css">
-    <title>Document</title>
-</head>
+        <link rel="stylesheet" href="./styles/style.css" />
+        <title>Shell Game</title>
+    </head>
 
-<body>
-    <main>
-        <section class="images">
-            <img id="cup-0" src="" />
-            <img id="cup-1" src=""/>
-            <img id="cup-2" src=""/>
-        </section>
-        <section class="buttons">
-            <button id="button-0">This Cup!</button>
-            <button id="button-1">This Cup!</button>
-            <button id="button-2">This Cup!</button>
-        </section>
-        <section class="stats">
-            <div class="stat" id="wins">Wins:</div>
-            <div class="stat" id="losses">Losses:</div>
-            <div class="stat" id="total">Total:</div>
-        </section>
-    </main>
-    <script type="module" src="./app.js"></script>
-</body>
+    <body>
+        <header>
+            <div class="gutter-right logo">
+                <img src="/assets/pink-shell.png" />
+                <h2>Where is the Pearl?</h2>
+            </div>
+        </header>
+        <main>
+            <section class="shells">
+                <div class="shell" id="shell-1">
+                    <img id="img-1" src="/assets/pink-shell.png" />
+                    <div class="pearl"></div>
+                    <button id="button-1">Guess</button>
+                </div>
+                <div class="shell" id="shell-2">
+                    <img id="img-2" src="/assets/pink-shell.png" />
+                    <div class="pearl"></div>
+                    <button id="button-2">Guess</button>
+                </div>
+                <div class="shell" id="shell-3">
+                    <img id="img-3" src="/assets/pink-shell.png" />
+                    <div class="pearl"></div>
+                    <button id="button-3">Guess</button>
+                </div>
+            </section>
+            <section class="stats">
+                <div class="stat">Wins: <span id="wins">0</span></div>
+                <div class="stat">Losses: <span id="losses">0</span></div>
+                <div class="stat">Total: <span id="total">0</span></div>
+            </section>
+        </main>
+        <footer></footer>
 
+        <script type="module" src="./app.js"></script>
+    </body>
 </html>
